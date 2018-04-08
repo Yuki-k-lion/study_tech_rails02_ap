@@ -27,7 +27,8 @@ class Scraping
     next_link =  current_page.at('.pagination .next a')
     
     # next_linkがなかったらwhile文を抜ける
-    break unless current_page.search('.next a')
+    break unless next_link
+    #Not good : current_page.search('.next a')
     
     # そのタグからhref属性の値を取得
     next_url = next_link.get_attribute('href')
@@ -72,9 +73,24 @@ class Scraping
     page = agent.get(link)
     title = page.at('.entry-title').inner_text
     image_url = page.at('.entry-content img')[:src] if page.at('.entry-content img')
-
-    #product = Product.new(title: title, image_url: image_url)
-    product = Product.where(title: title,image_url: image_url).first_or_initialize
+    
+    #columnの更新、Rateの追加。
+    director = page.at('.director').inner_text if page.at('.director')
+   
+    detail = page.search('#post-single p').inner_text if page.search('#post-single p')
+    
+    open_date = page.at('.review_details .date').inner_text if page.at('.review_details .date')
+  
+    
+       #product = Product.new(title: title, image_url: image_url)
+    product = Product.where(title: title).first_or_initialize
+    
+    product.title = title
+    product.image_url = image_url
+    product.director = director
+    product.detail = detail
+    product.open_date = open_date
+    
     product.save
   end
 end
