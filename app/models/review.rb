@@ -1,3 +1,3 @@
 class Review < ActiveRecord::Base
-    belong_to :product
+    belongs_to :product
 end
