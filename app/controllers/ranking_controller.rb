@@ -8,7 +8,7 @@ class RankingController < ApplicationController
       # limitメソッドも、orderメソッドと同様、allメソッドを省略することができます。
       # @ranking = Product.limit(5)
       product_ids = Review.group(:product_id).order('count_product_id DESC').limit(5).count(:product_id).keys
-      @ranking = product_ids.map { |id| Product.find(id) }
+      @ranking = product_ids.map { |p_id| Product.find(p_id) }
         
   end
 end
