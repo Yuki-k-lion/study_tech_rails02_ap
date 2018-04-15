@@ -3,6 +3,7 @@ TechReviewSite::Application.routes.draw do
   # get   'products/:product_id/reviews/new'  =>  'reviews#new'
   # post  'products/:product_id/reviews'      =>  'reviews#create'
   
+  resources :users, only: :show
   resources :products, only: :show do
     
     resources :reviews, only: [:new, :create]
