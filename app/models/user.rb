@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
   # 100×100#	アスペクト比を保ち一番短い辺を100pxにするようにリサイズし、画像を中央によせ、はみ出た部分は切り取る
 
   validates :nickname, presence: true
+  
+  has_many :review
 end
