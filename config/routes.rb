@@ -1,4 +1,5 @@
 TechReviewSite::Application.routes.draw do
+  devise_for :users
   # get   'products/:product_id/reviews/new'  =>  'reviews#new'
   # post  'products/:product_id/reviews'      =>  'reviews#create'
   
