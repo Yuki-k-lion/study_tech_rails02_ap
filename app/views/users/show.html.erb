@@ -11,78 +11,17 @@
     <div id="yjContentsBody">
       <div class="yjContainer">
         <ul class="user_page-contents">
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
+           <%  current_user.review.each do |r| %>
+              <li style="background-image: url(<%= r.product.image_url %>)">
+                <div class="meta">
+                  <header>
+                    <div class="title"><%= r.product.title %></div>
+                    <span class="star"><span class="rating-star"><i class="star-actived rate-<%= r.rate %>0"></i></span></span>
+                  </header>
+                  <div class="user_review"><%= r.reviews %></div>
+                </div>
+              </li>
+            <% end %>
         </ul>
 
       </div>
