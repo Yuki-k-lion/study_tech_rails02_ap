@@ -1,0 +1,20 @@
+#SiteURL
+https://eeb9644d449648d2b513d3bfa7897f0e.vfs.cloud9.us-east-2.amazonaws.com/
+
+#phpmyadmin
+https://eeb9644d449648d2b513d3bfa7897f0e.vfs.cloud9.us-east-2.amazonaws.com:8081/phpmyadmin/#PMAURL-0:index.php?db=&table=&server=1&target=&lang=ja&collation_connection=utf8_general_ci&token=54bae587e6debc39064f418408b3b69d
+
+#DB ReStart
+sudo service httpd start
+sudo service mysqld start
+
+#Server Start
+rails s -p $PORT -b $IP
+
+#git command
+
+git add . 
+
+git commit -m ""
+
+git push origin master
